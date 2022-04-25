@@ -9,6 +9,8 @@ import socket
 import threading
 import time
 
+error3 = "There was an error\n"
+
 def options():
     print("Enter a command:\n")
     print("help\n")
@@ -43,24 +45,24 @@ def crash():
     print("Test Crash\n")
     return
     
-def runStart(topology-file-name, routing-update-interval):
-    print("Test: "+topology-file-name+", "+routing-update-interval+"\n")
+def runStart(topologyFileName, routingUpdateInterval):
+    print("Test: "+topologyFileName+", "+routingUpdateInterval+"\n")
     return
 
 def startUp():
     print("server -t <topology-file-name> -i <routing-update-interval>\n")
-    startUp()
     command = input("Please enter command:\n")
     param = command.split()
-    if(param[0] == "server" && param[1] = "-t" && param[3] == "-i"):
+    if(param[0] == "server" and param[1] == "-t" and param[3] == "-i"):
         runStart(param[2], param[4])
     else:
         print("Input Error\n")
         startUp()
+        
 
 if __name__ == "__main__":
     startUp()
-    print(options)
+    options()
     while True:
         command = input("Please enter command:\n")
         param = command.split()
@@ -77,7 +79,7 @@ if __name__ == "__main__":
             if len(param) > 1:
                 print(error3)
                 continue
-            print(options)
+            options()
         elif param[0] == "update":
             if len(param) > 4:
                 print(error3)
@@ -93,6 +95,11 @@ if __name__ == "__main__":
                 print(error3)
                 continue
             packets()
+        elif param[0] == "display":
+            if len(param) > 1:
+                print(error3)
+                continue
+            display()
         elif param[0] == "disable":
             if len(param) > 2:
                 print(error3)
