@@ -1,7 +1,7 @@
 #Names: Steven Condor | Devin Delgado
-#Date: 2022.03.19
-#Application: chat
-#Purpose: To create TCP connections using sockets in which users can send messages to one another
+#Date: 2022.04.30
+#Application: Distance Vector Routing Protocols
+#Purpose:
 
 import os
 import sys
@@ -42,9 +42,24 @@ def disable(serverId):
 def crash():
     print("Test Crash\n")
     return
+    
+def runStart(topology-file-name, routing-update-interval):
+    print("Test: "+topology-file-name+", "+routing-update-interval+"\n")
+    return
 
+def startUp():
+    print("server -t <topology-file-name> -i <routing-update-interval>\n")
+    startUp()
+    command = input("Please enter command:\n")
+    param = command.split()
+    if(param[0] == "server" && param[1] = "-t" && param[3] == "-i"):
+        runStart(param[2], param[4])
+    else:
+        print("Input Error\n")
+        startUp()
 
 if __name__ == "__main__":
+    startUp()
     print(options)
     while True:
         command = input("Please enter command:\n")
